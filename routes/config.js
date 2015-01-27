@@ -9,28 +9,10 @@ module.exports = {
     id: 'index'
   },
   // ASSETS
-  favicon: {
+  public: {
     handler: {
-      directory: { path: './public/favicon.png' }
+      directory: { path: 'public' }
     },
-    id: 'favicon'
-  },
-  images: {
-    handler: {
-      directory: { path: './public/images' }
-    },
-    id: 'images'
-  },
-  css: {
-    handler: {
-      directory: { path: './public/styes/css' }
-    },
-    id: 'css'
-  },
-  js: {
-    handler: {
-      directory: { path: './public/js' }
-    },
-    id: 'js'
+    id: 'public'
   }
 }

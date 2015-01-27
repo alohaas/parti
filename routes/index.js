@@ -11,21 +11,6 @@ module.exports = [
   {
     method: 'GET',
     path: '/public/{path*}',
-    config: config.favicon
-  },
-  {
-    method: 'GET',
-    path: '/public/images/{path*}',
-    config: config.images
-  },
-  {
-    method: 'GET',
-    path: '/public/styles/css/{path*}',
-    config: config.css
-  },
-  {
-    method: 'GET',
-    path: '/public/js/{path*}',
-    config: config.js
+    config: config.public
   }
 ]
