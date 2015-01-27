@@ -4,7 +4,6 @@ var NunjucksHapi = require("nunjucks-hapi");
 var moment = require("moment");
 
 var viewPath = Path.join(__dirname, 'views');
-
 var env = NunjucksHapi.configure(viewPath);
 
 env.addFilter('log', function(data) {
@@ -27,6 +26,7 @@ server.connection({
   host: "localhost"
 });
 
+
 server.views({
   engines: {
     html: NunjucksHapi
@@ -34,16 +34,8 @@ server.views({
   path: viewPath
 });
 
-server.route({
-  method: "GET",
-  path: "/",
-  handler: function(request, reply) {
-    reply.view("index", {
-      title: 'hapi parti'
-    });
-  }
-});
+server.route(require('./routes'));
 
 server.start(function(){
-  console.log("Server listening on port 8080");
+  console.log("Server listening on port " + server.info.port);
 });
